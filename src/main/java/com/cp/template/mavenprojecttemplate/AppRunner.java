@@ -1,4 +1,4 @@
-package com.cp.template.jdk8template;
+package com.cp.template.mavenprojecttemplate;
 
 public class AppRunner {
     public static void main(String[] args) {

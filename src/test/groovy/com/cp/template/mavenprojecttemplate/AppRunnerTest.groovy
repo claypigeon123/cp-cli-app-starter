@@ -1,4 +1,4 @@
-package com.cp.template.jdk8template
+package com.cp.template.mavenprojecttemplate
 
 import spock.lang.Specification
 

@@ -4,16 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cp.template</groupId>
-    <artifactId>jdk-8-template</artifactId>
+    <artifactId>maven-project-template</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
+        <!-- BASIC META -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <project.mainClass>com.cp.template.jdk8template.AppRunner</project.mainClass>
+        <!-- MAIN CLASS -->
+        <project.mainClass>com.cp.template.mavenprojecttemplate.AppRunner</project.mainClass>
 
         <!-- LOGGING -->
         <slf4j.version>1.7.36</slf4j.version>

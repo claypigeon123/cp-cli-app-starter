@@ -2,7 +2,7 @@ package com.cp.template.mavenprojecttemplate
 
 import spock.lang.Specification
 
-class AppRunnerTest extends Specification {
+class AppRunnerSpec extends Specification {
 
     void "sanity test"() {
         expect:

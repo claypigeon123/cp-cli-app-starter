@@ -9,10 +9,13 @@
 
     <properties>
         <!-- BASIC META -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
+        <project.encoding>UTF-8</project.encoding>
+
+        <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- MAIN CLASS -->
         <project.mainClass>com.cp.template.mavenprojecttemplate.AppRunner</project.mainClass>
@@ -25,8 +28,8 @@
         <lombok.version>1.18.24</lombok.version>
 
         <!-- TEST -->
-        <groovy.version>3.0.11</groovy.version>
-        <bytebuddy.version>1.12.10</bytebuddy.version>
+        <groovy.version>3.0.12</groovy.version>
+        <bytebuddy.version>1.12.12</bytebuddy.version>
         <objenesis.version>3.2</objenesis.version>
     </properties>
 
@@ -80,13 +83,13 @@
             <version>${groovy.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+        <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
             <version>${bytebuddy.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- enables mocking of classes without default constructor (together with ByteBuddy or CGLIB) -->
+        <dependency>
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
             <version>${objenesis.version}</version>

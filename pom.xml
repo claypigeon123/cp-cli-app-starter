@@ -5,12 +5,13 @@
 
     <groupId>com.cp.template</groupId>
     <artifactId>maven-project-template</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${revision}</version>
 
     <properties>
         <!-- BASIC META -->
         <java.version>17</java.version>
         <project.encoding>UTF-8</project.encoding>
+        <revision>1.0.0-SNAPSHOT</revision>
 
         <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
@@ -21,15 +22,15 @@
         <project.mainClass>com.cp.template.mavenprojecttemplate.AppRunner</project.mainClass>
 
         <!-- LOGGING -->
-        <slf4j.version>1.7.36</slf4j.version>
-        <logback.version>1.2.11</logback.version>
+        <slf4j.version>2.0.3</slf4j.version>
+        <logback.version>1.4.3</logback.version>
 
         <!-- UTIL -->
         <lombok.version>1.18.24</lombok.version>
 
         <!-- TEST -->
-        <groovy.version>3.0.12</groovy.version>
-        <bytebuddy.version>1.12.12</bytebuddy.version>
+        <groovy.version>3.0.13</groovy.version>
+        <bytebuddy.version>1.12.16</bytebuddy.version>
         <objenesis.version>3.2</objenesis.version>
     </properties>
 

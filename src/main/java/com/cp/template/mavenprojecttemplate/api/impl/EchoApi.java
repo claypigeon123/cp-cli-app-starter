@@ -8,7 +8,11 @@ import picocli.CommandLine.Option;
 import java.io.PrintWriter;
 
 @Component
-@Command(name = "echo", description = "-> displays a provided message in standard output", mixinStandardHelpOptions = true)
+@Command(
+    name = "echo",
+    description = "-> displays a provided message in standard output",
+    mixinStandardHelpOptions = true
+)
 public class EchoApi extends Api {
 
     private PrintWriter pw;

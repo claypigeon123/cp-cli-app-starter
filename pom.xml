@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.cp.template</groupId>
-    <artifactId>maven-project-template</artifactId>
+    <groupId>com.cp.starter</groupId>
+    <artifactId>cli-app-starter</artifactId>
     <version>${revision}</version>
 
     <properties>

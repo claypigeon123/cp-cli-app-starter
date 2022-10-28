@@ -104,9 +104,8 @@
 
     <build>
         <plugins>
-            <!-- Uncomment one of these to distribute app -->
+            <!-- Spring Boot packaging VS appassembler packaging -> use only one -->
 
-            <!--
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -119,7 +118,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-            -->
 
             <!--
             <plugin>

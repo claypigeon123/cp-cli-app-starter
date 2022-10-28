@@ -2,7 +2,6 @@ package com.cp.template.mavenprojecttemplate;
 
 import com.cp.template.mavenprojecttemplate.api.Api;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +16,10 @@ import java.util.Collection;
 @RequiredArgsConstructor
 @Command(
     name = "app",
-    version = AppRunner.VERSION,
+    version = "1.0.0",
     mixinStandardHelpOptions = true
 )
 public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
-    @Value("${}")
-    public static final String VERSION = "1.0.0";
-
     private final Collection<Api> apis;
 
     private final IFactory factory;

@@ -37,11 +37,7 @@ public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
     @Override
     public void run(String... args) {
         CommandLine cmd = new CommandLine(this, factory);
-
-        for (Api api : apis) {
-            cmd.addSubcommand(api);
-        }
-
+        apis.forEach(cmd::addSubcommand);
         exitCode = cmd.execute(args);
     }
 

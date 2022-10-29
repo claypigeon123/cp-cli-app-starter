@@ -1,4 +1,4 @@
-package com.cp.template.mavenprojecttemplate.api;
+package com.cp.template.cliapptemplate.api;
 
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;

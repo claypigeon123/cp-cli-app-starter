@@ -1,6 +1,6 @@
-package com.cp.template.mavenprojecttemplate;
+package com.cp.template.cliapptemplate;
 
-import com.cp.template.mavenprojecttemplate.api.Api;
+import com.cp.template.cliapptemplate.api.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;

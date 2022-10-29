@@ -1,6 +1,6 @@
-package com.cp.template.mavenprojecttemplate.api.impl;
+package com.cp.template.cliapptemplate.api.impl;
 
-import com.cp.template.mavenprojecttemplate.api.Api;
+import com.cp.template.cliapptemplate.api.Api;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

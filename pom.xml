@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.cp.starter</groupId>
-    <artifactId>cli-app-starter</artifactId>
+    <groupId>com.cp.template</groupId>
+    <artifactId>cli-app-template</artifactId>
     <version>${revision}</version>
 
     <properties>
@@ -135,7 +135,7 @@
                             <showConsoleWindow>true</showConsoleWindow>
                             <programs>
                                 <program>
-                                    <mainClass>com.cp.template.mavenprojecttemplate.AppRunner</mainClass>
+                                    <mainClass>com.cp.template.cliapptemplate.AppRunner</mainClass>
                                     <id>app</id>
                                 </program>
                             </programs>

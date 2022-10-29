@@ -1,4 +1,4 @@
-package com.cp.template.mavenprojecttemplate
+package com.cp.template.cliapptemplate
 
 import spock.lang.Specification
 

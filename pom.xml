@@ -19,7 +19,7 @@
         <revision>1.0.0-SNAPSHOT</revision>
 
         <!-- DEPENDENCY VERSIONING -->
-        <picocli.version>4.6.3</picocli.version>
+        <picocli.version>4.7.0</picocli.version>
         <snakeyaml.version>1.33</snakeyaml.version>
 
         <!-- TEST DEPENDENCY VERSIONING -->

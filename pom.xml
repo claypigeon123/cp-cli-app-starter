@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.0.6</version>
         <relativePath/>
     </parent>
 
@@ -19,7 +19,12 @@
         <revision>1.0.0-SNAPSHOT</revision>
 
         <!-- DEPENDENCY VERSIONING -->
-        <picocli.version>4.7.0</picocli.version>
+        <spock-bom.version>2.3-groovy-4.0</spock-bom.version>
+        <picocli.version>4.7.3</picocli.version>
+
+        <!-- PLUGIN VERSIONING -->
+        <gmavenplus.version>2.1.0</gmavenplus.version>
+        <surefire.version>3.0.0</surefire.version>
     </properties>
 
     <dependencyManagement>
@@ -27,9 +32,14 @@
             <dependency>
                 <groupId>org.spockframework</groupId>
                 <artifactId>spock-bom</artifactId>
-                <version>2.3-groovy-4.0</version>
+                <version>${spock-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>info.picocli</groupId>
+                <artifactId>picocli-spring-boot-starter</artifactId>
+                <version>${picocli.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -41,12 +51,13 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- UTIL -->
+        <!-- OTHER -->
         <dependency>
             <groupId>info.picocli</groupId>
             <artifactId>picocli-spring-boot-starter</artifactId>
-            <version>${picocli.version}</version>
         </dependency>
+
+        <!-- UTILITY -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -78,7 +89,7 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot packaging VS appassembler packaging -> use only one -->
+            <!-- Spring Boot packaging VS appassembler packaging - use only one -->
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -122,7 +133,7 @@
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>1.13.1</version>
+                <version>${gmavenplus.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -135,7 +146,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${surefire.version}</version>
                 <configuration>
                     <useModulePath>false</useModulePath> <!-- https://issues.apache.org/jira/browse/SUREFIRE-1809 -->
                     <useFile>false</useFile>

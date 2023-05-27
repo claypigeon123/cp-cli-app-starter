@@ -7,22 +7,15 @@ import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import picocli.CommandLine;
-import picocli.CommandLine.Command;
-import picocli.CommandLine.IFactory;
 
 import java.util.Collection;
 
 @SpringBootApplication
 @RequiredArgsConstructor
-@Command(
-    name = "app",
-    version = "1.0.0",
-    mixinStandardHelpOptions = true
-)
 public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
+    private final App app;
     private final Collection<Api> apis;
-
-    private final IFactory factory;
+    private final CommandLine.IFactory factory;
 
     private int exitCode = 0;
 
@@ -32,7 +25,7 @@ public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
 
     @Override
     public void run(String... args) {
-        CommandLine cmd = new CommandLine(this, factory);
+        CommandLine cmd = new CommandLine(app, factory);
         apis.forEach(cmd::addSubcommand);
         exitCode = cmd.execute(args);
     }

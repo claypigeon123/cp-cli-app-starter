@@ -37,6 +37,5 @@ public class EchoApi extends Api {
     @Override
     protected void close() {
         pw.flush();
-        pw.close();
     }
 }

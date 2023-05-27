@@ -5,11 +5,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.6</version>
+        <version>3.0.7</version>
         <relativePath/>
     </parent>
 
-    <groupId>com.cp.template</groupId>
+    <groupId>com.cps.template</groupId>
     <artifactId>cli-app-template</artifactId>
     <version>${revision}</version>
 
@@ -23,8 +23,8 @@
         <picocli.version>4.7.3</picocli.version>
 
         <!-- PLUGIN VERSIONING -->
-        <gmavenplus.version>2.1.0</gmavenplus.version>
-        <surefire.version>3.0.0</surefire.version>
+        <gmavenplus.version>3.0.0</gmavenplus.version>
+        <surefire.version>3.1.0</surefire.version>
     </properties>
 
     <dependencyManagement>
@@ -120,7 +120,7 @@
                             <showConsoleWindow>true</showConsoleWindow>
                             <programs>
                                 <program>
-                                    <mainClass>com.cp.template.cliapptemplate.AppRunner</mainClass>
+                                    <mainClass>com.cps.template.cliapptemplate.AppRunner</mainClass>
                                     <id>app</id>
                                 </program>
                             </programs>

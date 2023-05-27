@@ -1,6 +1,6 @@
-package com.cp.template.cliapptemplate.api.impl;
+package com.cps.template.cliapptemplate.api.impl;
 
-import com.cp.template.cliapptemplate.api.Api;
+import com.cps.template.cliapptemplate.api.Api;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

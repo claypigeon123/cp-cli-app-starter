@@ -1,4 +1,4 @@
-package com.cp.template.cliapptemplate.api;
+package com.cps.template.cliapptemplate.api;
 
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;

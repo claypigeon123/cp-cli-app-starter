@@ -1,6 +1,6 @@
-package com.cp.template.cliapptemplate;
+package com.cps.template.cliapptemplate;
 
-import com.cp.template.cliapptemplate.api.Api;
+import com.cps.template.cliapptemplate.api.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;

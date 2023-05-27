@@ -1,4 +1,4 @@
-package com.cp.template.cliapptemplate
+package com.cps.template.cliapptemplate
 
 import spock.lang.Specification
 

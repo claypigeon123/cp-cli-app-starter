@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.8</version>
         <relativePath/>
     </parent>
 
@@ -20,11 +20,11 @@
 
         <!-- DEPENDENCY VERSIONING -->
         <spock-bom.version>2.3-groovy-4.0</spock-bom.version>
-        <picocli.version>4.7.3</picocli.version>
+        <picocli.version>4.7.4</picocli.version>
 
         <!-- PLUGIN VERSIONING -->
         <gmavenplus.version>3.0.0</gmavenplus.version>
-        <surefire.version>3.1.0</surefire.version>
+        <surefire.version>3.1.2</surefire.version>
     </properties>
 
     <dependencyManagement>

@@ -14,7 +14,7 @@ import spock.util.environment.RestoreSystemProperties
 import static java.lang.String.format
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE, properties = [
-    "info.name=APP_NAME", "info.version=APP_VERSION", "info.executable-name=app"
+    "info.name=APP_NAME", "info.version=APP_VERSION-SNAPSHOT", "info.executable-name=app"
 ])
 @ContextConfiguration
 @RestoreSystemProperties

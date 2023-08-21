@@ -22,7 +22,7 @@ public class PicocliProvider implements IVersionProvider {
     @Override
     public String[] getVersion() {
         String name = infoProperties.name();
-        String version = infoProperties.version().split("-SNAPSHOT")[0];
+        String version = infoProperties.version().replaceFirst("-SNAPSHOT|-RC|-RELEASE", "");
 
         return new String[] { format("%s - version %s", name, version) };
     }

@@ -1,6 +1,5 @@
 package com.cps.template.cliapptemplate.api.impl
 
-
 import org.junit.Rule
 import org.springframework.boot.test.system.OutputCaptureRule
 import picocli.CommandLine
@@ -8,51 +7,65 @@ import picocli.CommandLine.ExitCode
 import spock.lang.Specification
 import spock.util.environment.RestoreSystemProperties
 
+import static java.lang.String.format
+
 @RestoreSystemProperties
 class EchoApiSpec extends Specification {
 
     @Rule
     OutputCaptureRule output = new OutputCaptureRule()
 
+    EchoApi echoApi = Spy()
+
     CommandLine cmd
 
     void setup() {
-        cmd = new CommandLine(new EchoApi())
+        cmd = new CommandLine(echoApi)
     }
 
-    def "verify echo to standard output with message \"#msg\""() {
+    def "echo message: \"#msgArgs\""() {
+        given:
+        String msg = String.join(System.lineSeparator(), msgArgs)
+
         when:
         int exitCode = cmd.execute("--message", msg)
 
         then:
         exitCode == ExitCode.OK
-        output.out.trim() == msg
+        output.out == format("%s%n", msg)
+        output.err == ""
 
         where:
-        msg                        || _
-        ""                         || _
-        "a"                        || _
-        "hello there"              || _
-        "hello\nthere"             || _
-        "several\nlines\nof\ntext" || _
+        msgArgs                            || _
+        [""]                               || _
+        ["a"]                              || _
+        ["hello there"]                    || _
+        ["hello", "there"]                 || _
+        ["several", "lines", "of", "text"] || _
     }
 
-    def "verify fails if no message provided"() {
+    def "echo message - no message provided"() {
         given:
-        def expected = """\
-            Missing required option: '--message=<message>'
-            Usage: echo [-hV] -m=<message>
-            -> displays a provided message in standard output
-              -h, --help                Show this help message and exit.
-              -m, --message=<message>   Message to print
-              -V, --version             Print version information and exit.\
-        """.stripIndent().replaceAll("\n", System.lineSeparator())
+        def expectedFirstLine = "Missing required option: '--message=<message>'"
 
         when:
         int exitCode = cmd.execute()
 
         then:
         exitCode == ExitCode.USAGE
-        output.err.trim() == expected
+        output.out == ""
+        output.err.readLines().get(0) == expectedFirstLine
+    }
+
+    def "echo message - app error"() {
+        when:
+        int exitCode = cmd.execute("--message", "something")
+
+        then:
+        1 * echoApi.start() >> { throw new IllegalStateException("Something went wrong") }
+
+        exitCode == ExitCode.SOFTWARE
+        output.out == ""
+        output.err == format("Something went wrong%n")
     }
 }

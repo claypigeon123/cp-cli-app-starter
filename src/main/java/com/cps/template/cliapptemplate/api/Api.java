@@ -20,9 +20,14 @@ public abstract class Api implements Runnable, IExitCodeGenerator {
 
     @Override
     public final void run() {
-        initialize();
-        start();
-        close();
+        try {
+            initialize();
+            start();
+            close();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            exitCode = 1;
+        }
     }
 
     @Override

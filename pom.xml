@@ -10,22 +10,22 @@
     </parent>
 
     <groupId>com.cps.template</groupId>
-    <artifactId>cli-app-template</artifactId>
-    <version>${revision}</version>
+    <artifactId>cps-cli-app-template</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <!-- BASIC META -->
         <java.version>17</java.version>
-        <revision>1.0.0-SNAPSHOT</revision>
+        <executable.name>app</executable.name>
 
         <!-- DEPENDENCY VERSIONING -->
         <spock-bom.version>2.3-groovy-4.0</spock-bom.version>
         <picocli.version>4.7.4</picocli.version>
-        <snakeyaml.version>2.0</snakeyaml.version>
+        <snakeyaml.version>2.1</snakeyaml.version>
 
         <!-- PLUGIN VERSIONING -->
         <gmavenplus.version>3.0.0</gmavenplus.version>
-        <surefire.version>3.1.2</surefire.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -95,8 +95,6 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot packaging VS appassembler packaging - use only one -->
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -109,33 +107,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-
-            <!--
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>appassembler-maven-plugin</artifactId>
-                <version>2.1.0</version>
-                <executions>
-                    <execution>
-                        <id>assemble</id>
-                        <goals>
-                            <goal>assemble</goal>
-                        </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <showConsoleWindow>true</showConsoleWindow>
-                            <programs>
-                                <program>
-                                    <mainClass>com.cps.template.cliapptemplate.AppRunner</mainClass>
-                                    <id>app</id>
-                                </program>
-                            </programs>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            -->
-
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
@@ -152,7 +123,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.version}</version>
                 <configuration>
                     <useModulePath>false</useModulePath> <!-- https://issues.apache.org/jira/browse/SUREFIRE-1809 -->
                     <useFile>false</useFile>

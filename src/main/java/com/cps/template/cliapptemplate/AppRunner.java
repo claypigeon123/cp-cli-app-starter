@@ -1,21 +1,27 @@
 package com.cps.template.cliapptemplate;
 
-import com.cps.template.cliapptemplate.api.Api;
+import com.cps.template.cliapptemplate.provider.PicocliProvider;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import picocli.CommandLine;
-
-import java.util.Collection;
+import picocli.CommandLine.IFactory;
 
 @SpringBootApplication
 @RequiredArgsConstructor
 public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
+
+    @NonNull
     private final App app;
-    private final Collection<Api> apis;
-    private final CommandLine.IFactory factory;
+
+    @NonNull
+    private final IFactory springFactory;
+
+    @NonNull
+    private final PicocliProvider picocliProvider;
 
     private int exitCode = 0;
 
@@ -25,8 +31,8 @@ public class AppRunner implements CommandLineRunner, ExitCodeGenerator {
 
     @Override
     public void run(String... args) {
-        CommandLine cmd = new CommandLine(app, factory);
-        apis.forEach(cmd::addSubcommand);
+        CommandLine cmd = new CommandLine(app, springFactory);
+        cmd.setCommandName(picocliProvider.getExecutableName());
         exitCode = cmd.execute(args);
     }
 

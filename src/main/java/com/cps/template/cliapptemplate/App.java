@@ -1,11 +1,17 @@
 package com.cps.template.cliapptemplate;
 
-import lombok.RequiredArgsConstructor;
+import com.cps.template.cliapptemplate.api.impl.EchoApi;
+import com.cps.template.cliapptemplate.provider.PicocliProvider;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine.Command;
 
 @Component
-@RequiredArgsConstructor
-@Command(name = "app", version = "1.0.0", mixinStandardHelpOptions = true)
+@Command(
+    versionProvider = PicocliProvider.class,
+    mixinStandardHelpOptions = true,
+    subcommands = {
+        EchoApi.class
+    }
+)
 public class App {
 }
